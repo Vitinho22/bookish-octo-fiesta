@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(170, 128, 37, 0.315);
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: rgba(24, 21, 21, 0.993);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    
+}
+
+header h1 {
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color:white;
+    color:black;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Main content */
+main {
+    padding: 20px;
+}
+
+main h2 {
+    margin-bottom: 10px;
+}
+
+main p {
+    margin-bottom: 20px;
+}
+
+.curso-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.curso {
+  border: 1px solid #302c2c;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 15px;
+  width: 250px;
+  text-align: center;
+}
+.curso img {
+  max-width: 100%;
+  height: auto;
+}
+.curso h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+.curso p {
+  font-size: 0.9em;
+}
+.curso button {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  
+}
+.curso button:hover {
+  background-color: #218838;
+}h1{
+    font-size: 22px;
+}@keyframes pulsate {
+    0% {
+        transform: scale(1); /* Começa no tamanho normal */
+    }
+    50% {
+        transform: scale(1.2); /* Aumenta para 120% do tamanho */
+    }
+    100% {
+        transform: scale(1); /* Retorna ao tamanho normal */
+    }
+}
+
+.whatsapp {
+    color: #218838; /* Cor do ícone do WhatsApp */
+    position: fixed; /* Para manter o botão fixo na tela */
+    bottom: 90px; /* Distância do fundo */
+    right: 20px; /* Distância da direita */
+    width: 60px; /* Largura do ícone */
+    height: 60px; /* Altura do ícone */
+    font-size: 50px; /* Tamanho do ícone */
+    z-index: 100; /* Para garantir que esteja sobre outros elementos */
+    animation: pulsate 1.5s infinite; /* Aplica a animação */
+}
+
+/* Estilo da mensagem de boas-vindas */
+.boas-vindas {
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    color: #333333; /* Texto escuro */
+    max-width: 1200px; /* Aumenta a largura do contêiner */
+    margin: 50px auto; /* Centraliza a mensagem */
+    padding: 40px;
+    border-radius: 10px; /* Arredonda os cantos */
+    text-align: center; /* Centraliza o texto */
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
+  
+}
+
+.boas-vindas h1 {
+    color: #007bff; /* Cor do título */
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.boas-vindas p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.boas-vindas h2 {
+    color: #28a745; /* Cor do subtítulo */
+    font-size: 2em;
+    margin-top: 30px;
+}
+
+/* Estilo da seção de saudações com imagem de fundo */
+.saudacoes {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXoxVvA_WYaGzkr0lSi9LTBDwjU-cCgjIHtw&s");
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    background-position: center; /* Centraliza a imagem */
+    height: 100%; /* Define altura de 100% da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
