@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiversoShop</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+/* Definindo variáveis de cores */
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #fff;
+    --highlight-color: #333;
+    --background-color: #f7f7f7;
+    --text-color: #333;
+    --old-price-color: #999;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    width: 100%;
+}
+
+.top-bar {
+    background-color: var(--highlight-color);
+    color: var(--secondary-color);
+    padding: 0.5em 1em;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+}
+
+.main-header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 1em;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel-item {
+    display: none;
+    text-align: center;
+    padding: 2em;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.carousel-caption h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.carousel-caption p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.carousel-caption button {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.7em 1.5em;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.carousel-caption button:hover {
+    background-color: var(--highlight-color);
+    color: var(--secondary-color);
+}
+
+main {
+    padding: 2em;
+}
+
+.best-seller {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.best-seller h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product {
+    padding: 1em;
+    margin: 0.5em;
+    width: 22%;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 1em;
+}
+
+.product h3 {
+    margin: 0.5em 0;
+    font-size: 1.2em;
+}
+
+.price {
+    font-size: 1.1em;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--old-price-color);
+    margin-left: 0.5em;
+}
+
+.product button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1em;
+    transition: background-color 0.3s;
+}
+
+.product button:hover {
+    background-color: var(--highlight-color);
+}
+
+footer {
+    background-color: var(--highlight-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 2em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.company-info,
+.subscribe {
+    width: calc(50% - 1em);
+    margin-bottom: 1em;
+}
+
+.company-info h3,
+.subscribe h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.company-info p,
+.subscribe p {
+    font-size: 1em;
+}
+
+.subscribe form {
+    display: flex;
+    justify-content: center;
+}
+
+.subscribe input[type="email"] {
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 1em;
+}
+
+.subscribe button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.subscribe button:hover {
+    background-color: var(--highlight-color);
+}
+</style>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="store-info">
+                <span>Store Location</span>
+                <span>Track your Order</span>
+            </div>
+            <div class="user-info">
+                <span>My Account</span>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="logo">VW ECOMMERCE STORE</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Men's</a></li>
+                    <li><a href="#">Women's</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="carousel">
+            <div class="carousel-item active">
+                <img src="images/carousel1.jpg" alt="Carousel 1">
+                <div class="carousel-caption">
+                    <h2>Lorem Ipsum is Simply Dummy</h2>
+                    <p>Lorem ipsum is simply dummy text of the printing.</p>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel2.jpg" alt="Carousel 2">
+                <div class="carousel-caption">
+                    <h2>Product Title</h2>
+                    <p>One Select Items Only</p>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="best-seller">
+            <h2>Our Best Seller</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="images/product1.jpg" alt="Product 1">
+                    <h3>Product Title 1</h3>
+                    <p class="price">R$ 150,00 <span class="old-price">R$ 200,00</span></p>
+                    <button>Buy Now</button>
+                </div>
+                <div class="product">
+                    <img src="images/product2.jpg" alt="Product 2">
+                    <h3>Product Title 2</h3>
+                    <p class="price">R$ 150,00 <span class="old-price">R$ 200,00</span></p>
+                    <button>Buy Now</button>
+                </div>
+                <!-- Mais Produtos -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="company-info">
+                <h3>Company</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            </div>
+            <div class="subscribe">
+                <h3>Subscribe</h3>
+                <form action="#">
+                    <input type="email" placeholder="Your email">
+                    <button>Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+

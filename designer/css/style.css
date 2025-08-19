@@ -1,0 +1,158 @@
+/* Resetando estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Seções */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Portfólio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.portfolio-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* Formulário de Contato */
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #c0392b;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+/* Estilização da seção de introdução */
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Isso move a batata para o lado direito */
+    padding: 50px;
+    color: #fff;
+   background-color: #c0392b;
+}
+
+/* Estilo do título e texto */
+.intro h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Estilo do botão */
+.btn {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Estilo da imagem */
+#home img {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    object-fit: cover;
+}/* Animação para deslizar do topo para frente */
+@keyframes slide-fwd-top {
+    0% {
+        transform: translateY(-100%) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Classe que ativa a animação */
+.slide-fwd-top {
+    -webkit-animation: slide-fwd-top 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-fwd-top 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    width: 300px; /* Ajuste o tamanho conforme sua preferência */
+    border-radius: 15px;
+    margin: 20px auto;
+    display: block;
+}
+

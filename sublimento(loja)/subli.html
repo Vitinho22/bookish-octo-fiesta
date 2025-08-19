@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Suplementos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/SEU_KIT_FONTAWESOME.js" crossorigin="anonymous"></script>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1079f0;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgb(45, 65, 175);
+            color: white;
+            padding: 10px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Hero */
+        #hero {
+            background-image: url("https://static.netshoes.com.br/bnn/l_netshoes/2024-06-16/7983_full-desktop.jpg");
+            color: #fff;
+            text-align: center;
+            padding: 70px 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 5px;
+        }
+
+        /* Produtos */
+        #produtos {
+            padding: 30px 0;
+        }
+
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .produto {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .produto img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .produto h3 {
+            margin-top: 0;
+        }
+
+        .produto .preco {
+            font-weight: bold;
+            color: rgb(83, 10, 255);
+        }
+
+        .produto button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Sobre */
+        #sobre {
+            padding: 30px 0;
+            background-color: #eee;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header nav ul {
+                margin-top: 10px;
+                flex-direction: column;
+            }
+
+            header nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Loja de Suplementos</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i> Carrinho (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h2>Encontre os melhores suplementos para sua saúde e bem-estar!</h2>
+                <p>Aproveite nossas ofertas e promoções exclusivas.</p>
+                <a href="#" class="btn">Ver Produtos</a>
+            </div>
+        </section>
+
+        <section id="produtos">
+            <div class="container">
+                <h2>Nossos Produtos</h2>
+                <div class="produtos-grid" id="product-list"></div>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="container">
+                <h2>Sobre Nós</h2>
+                <p>Somos uma loja especializada em suplementos de alta qualidade, com o objetivo de ajudar você a alcançar seus objetivos de saúde e performance.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Loja de Suplementos. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const produtos = [
+            {
+                id: 1,
+                nome: "Whey Protein Concentrado",
+                descricao: "O melhor whey protein para ganho de massa muscular.",
+                preco: 89.90,
+                imagem: "https://meumundofit.com.br/wp-content/uploads/creatina-monohidratada-150g-black-skull.jpg"
+            },
+            {
+                id: 2,
+                nome: "Creatina Monohidratada",
+                descricao: "Aumente sua força e performance com creatina.",
+                preco: 49.90,
+                imagem: "https://www.oceandrop.com.br/media/catalog/product/cache/b8e80b8ab26713fe9633d84839545a38/6/4/648x908-chlorellac_1.png"
+            },
+            {
+                id: 3,
+                nome: "BCAA 2:1:1",
+                descricao: "Recupere seus músculos mais rápido com BCAA.",
+                preco: 69.90,
+                imagem: "https://exemplo.com/imagens/bcaa.jpg"
+            }
+        ];
+
+        const productList = document.getElementById("product-list");
+        const cartCountElement = document.getElementById("cart-count");
+        let cart = [];
+
+        function renderProducts() {
+            productList.innerHTML = "";
+
+            produtos.forEach(produto => {
+                const productDiv = document.createElement("div");
+                productDiv.classList.add("produto");
+
+                productDiv.innerHTML = `
+                    <img src="${produto.imagem}" alt="${produto.nome}">
+                    <h3>${produto.nome}</h3>
+                    <p>${produto.descricao}</p>
+                    <p class="preco">R$ ${produto.preco.toFixed(2)}</p>
+                    <button onclick="addToCart(${produto.id})">Adicionar ao Carrinho</button>
+                `;
+
+                productList.appendChild(productDiv);
+            });
+        }
+
+        function addToCart(productId) {
+            const produtoToAdd = produtos.find(produto => produto.id === productId);
+
+            if (produtoToAdd) {
+                cart.push(produtoToAdd);
+                updateCartCount();
+                alert(`${produtoToAdd.nome} adicionado ao carrinho!`);
+            }
+        }
+
+        function updateCartCount() {
+            cartCountElement.innerText = cart.length;
+        }
+
+        renderProducts();
+    </script>
+</body>
+</html>
