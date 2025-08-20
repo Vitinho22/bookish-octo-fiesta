@@ -1,10 +1,15 @@
 const mercadopago = require('mercadopago');
 
-// Cole seu Access Token abaixo
-mercadopago.configurations.setAccessToken('APP_USR-1576844588957876-081908-e4965a91f36605690cc9006a7af8653e-1205734045');
+// Crie uma instância de configuração:
+const mp = new mercadopago.MercadoPagoConfig({
+  accessToken: 'APP_USR-1576844588957876-081908-e4965a91f36605690cc9006a7af8653e-1205734045'
+});
+
+// Para criar preferências, use o client apropriado:
+const preference = new mercadopago.Preference(mp);
 
 async function criarPagamento() {
-  const preference = {
+  const pref = {
     items: [
       {
         title: 'Produto de exemplo',
@@ -16,8 +21,8 @@ async function criarPagamento() {
   };
 
   try {
-    const response = await mercadopago.preferences.create(preference);
-    console.log('Link de pagamento:', response.body.init_point);
+    const response = await preference.create({ body: pref });
+    console.log('Link de pagamento:', response.init_point);
   } catch (e) {
     console.error('Erro ao criar preferência:', e);
   }
